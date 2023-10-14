@@ -35,7 +35,7 @@ $(document).ready(function () {
         // Return ends the play.
         if (gameBoard[cellIndex] !== '' || gameOver) return; 
 
-        // Updates the game board with the current player's symbol and displays X or O
+        // If game still going, game board updates with the current player's symbol and displays X or O
         gameBoard[cellIndex] = currentPlayer; 
         cell.text(currentPlayer); 
 
