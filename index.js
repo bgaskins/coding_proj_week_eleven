@@ -31,15 +31,14 @@ $(document).ready(function () {
         const cell = $(this); // Get the clicked cell
         const cellIndex = cells.index(cell); // Get the index of clicked cell
 
-        // Checks if the cell is already marked (not empty) or if the game is over (true). 
-        // Return ends the play.
+        // If the cell is not empty or if the game is over (true), the game is over.
         if (gameBoard[cellIndex] !== '' || gameOver) return; 
 
         // If game still going, game board updates with the current player's symbol and displays X or O
         gameBoard[cellIndex] = currentPlayer; 
         cell.text(currentPlayer); 
 
-        // Checks for a winner/draw and ends the game 
+        // After game continues, it continues to check for a winner or draw and ends the game 
         if (checkWin()) {
             endGame(false); 
         } else if (checkDraw()) {
@@ -58,8 +57,8 @@ $(document).ready(function () {
     }
     // Checks for a draw when every cell is filled with and X or a O
     function checkDraw() {
-        //.some() runs through cells on game board. If cell is empty, the game continues, if
-        // cells are full (!== 0), the game ends in a draw
+        //.some() runs through cells on game board. If cell is empty, the game continues
+        // If cells are full (!== 0), the game ends in a draw
         return gameBoard.every(cell => cell !== ''); 
     }
     // Ends the game and displays a bootstrap alert with the results of winner or draw
