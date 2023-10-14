@@ -57,7 +57,6 @@ $(document).ready(function () {
     }
     // Checks for a draw when every cell is filled with and X or a O
     function checkDraw() {
-        //.some() runs through cells on game board. If cell is empty, the game continues
         // If cells are full (!== 0), the game ends in a draw
         return gameBoard.every(cell => cell !== ''); 
     }
